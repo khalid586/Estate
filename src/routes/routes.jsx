@@ -8,6 +8,7 @@ import ProfilePage from "../pages/ProfilePage";
 import ErrorPage from "../pages/ErrorPage";
 import UpdateProfile from "../pages/UpdateProfile";
 import Properties from "../components/Properties";
+import HomePage from "../pages/HomePage";
   
  export const router = createBrowserRouter([
     {
@@ -18,7 +19,7 @@ import Properties from "../components/Properties";
       children:[
         {
           path:'/',
-          element:<Properties></Properties>
+          element:<HomePage></HomePage>
         }
         ,{
             path:'/login',
