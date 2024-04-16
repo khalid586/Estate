@@ -6,6 +6,7 @@ import LoginPage from "../pages/LoginPage";
 import RegisterPage from "../pages/RegisterPage";
 import ProfilePage from "../pages/ProfilePage";
 import ErrorPage from "../pages/ErrorPage";
+import UpdateProfile from "../pages/UpdateProfile";
   
  export const router = createBrowserRouter([
     {
@@ -25,6 +26,10 @@ import ErrorPage from "../pages/ErrorPage";
         {
             path:'/profile',
             element:<ProfilePage></ProfilePage>
+        },
+        {
+            path:'/update',
+            element:<UpdateProfile></UpdateProfile>
         },
       ]
     },
