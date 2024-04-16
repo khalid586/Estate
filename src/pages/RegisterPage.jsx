@@ -3,6 +3,7 @@ import React, { useContext } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../providers/AuthProvider';
 import { updateProfile } from 'firebase/auth';
+import { Helmet } from 'react-helmet-async';
 
 
 function RegisterPage() {
@@ -32,6 +33,9 @@ function RegisterPage() {
     }
     return (
         <>
+            <Helmet>
+                <title>Estate | Register</title>
+            </Helmet>
             <div className='text-center text-4xl my-4 font-bold'>Register</div>
             
             <form onSubmit={handleRegistration} className="max-w-sm mx-auto">

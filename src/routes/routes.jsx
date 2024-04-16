@@ -7,6 +7,7 @@ import RegisterPage from "../pages/RegisterPage";
 import ProfilePage from "../pages/ProfilePage";
 import ErrorPage from "../pages/ErrorPage";
 import UpdateProfile from "../pages/UpdateProfile";
+import Properties from "../components/Properties";
   
  export const router = createBrowserRouter([
     {
@@ -16,6 +17,10 @@ import UpdateProfile from "../pages/UpdateProfile";
 
       children:[
         {
+          path:'/',
+          element:<Properties></Properties>
+        }
+        ,{
             path:'/login',
             element:<LoginPage></LoginPage>,
         },

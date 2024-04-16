@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../providers/AuthProvider';
 import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
 import app from '../firebase/firebase.config';
+import { Helmet } from 'react-helmet-async';
 
 function LoginPage() {
     const {signIn} = useContext(AuthContext);
@@ -35,6 +36,11 @@ function LoginPage() {
 
     return (
         <>
+            <Helmet>
+                <title>
+                    Estate | Login
+                </title>
+            </Helmet>
             <div className='text-center text-4xl my-4 font-bold'>Login</div>
 
             <form onSubmit={handleLogin} className="max-w-sm mx-auto">

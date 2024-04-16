@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { AuthContext } from '../providers/AuthProvider';
 import { Navigate, useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 function Spinner(){
     return(
@@ -24,6 +25,9 @@ function ProfilePage() {
 
     return(
         <div>
+        <Helmet>
+            <title>Estate | User profile</title>
+        </Helmet>
         {
             loading ? <Spinner></Spinner> : 
             <div>
