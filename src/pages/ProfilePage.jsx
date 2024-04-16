@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { AuthContext } from '../providers/AuthProvider';
 import { Navigate, useNavigate } from 'react-router-dom';
 
@@ -16,6 +16,11 @@ function Spinner(){
 
 function ProfilePage() {
     const {user,loading,logOut} = useContext(AuthContext);
+    const [imgAvailable,setImgAvailable] = useState(true);
+
+    function handleError(){
+        setImgAvailable(false);
+    }
 
     return(
         <div>
@@ -26,7 +31,7 @@ function ProfilePage() {
                     user ? 
                     <div className='text-center my-8'>
                             <p className='flex justify-center m-4'>
-                                {user?.photoURL?<img className='border-4 rounded-full' src= {user.photoURL} alt="" />:"No picture available"}
+                                {user?.photoURL?<img className='border-4 rounded-full' src= {imgAvailable?user.photoURL:'/vite.svg'} onError={handleError} alt="" />:"No picture available"}
                             </p>
                             <p>{user.email}</p>
                             <p>{user?.displayName?user.displayName:'User name is not registered'}</p>
