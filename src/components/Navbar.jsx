@@ -29,22 +29,22 @@ function NavbarComp() {
 
   return (
     <>    
-        <div className='flex justify-between  font-bold text-xs md:text-base'>
+        <div className='flex justify-between  font-semibold text-xs md:text-base'>
             <NavLink className= "mt-3" to = "/">
 
                 <span className="pl-2 self-center whitespace-nowrap text-base md:text-xl font-semibold dark:text-white">Estate</span>
             </NavLink>
-            <div className='flex justify-center md:w-2/3 mt-2'>
-                <NavLink to="/" className={({isActive})=>isActive?'text-blue-600 duration-500 rounded-full px-4 p-2 bg-blue-50 ':'text-black p-2'}><p className='flex gap-1'><img src='/All assets/building-regular.svg' width={15}/>Home</p></NavLink>
+            <div className='flex gap-2 justify-center md:w-2/3 mt-2'>
+                <NavLink to="/" className={({isActive})=>isActive?'text-blue-600 duration-500 rounded-full px-4 py-2 bg-blue-50 ':'text-black p-2'}><p className='flex gap-1'><img src='/All assets/building-regular.svg' width={10}/>Home</p></NavLink>
                 {
-                    user && <NavLink to="/update" className={({isActive})=>isActive?'text-blue-600 duration-500 rounded-full px-4 p-2 bg-blue-50':'text-black p-2'}>     <p className='flex gap-1'><img src='/All assets/user-regular.svg' width={15}/>Update</p></NavLink>
+                    user && <NavLink to="/update" className={({isActive})=>isActive?'text-blue-600 duration-500 rounded-full px-4 p-2 bg-blue-50':'text-black p-2'}>     <p className='flex gap-1'><img src='/All assets/user-regular.svg' width={10}/>Update</p></NavLink>
                 }
             </div> 
             <div className='pt-4 mr-2'> 
             {   loading? <Spinner></Spinner>:
                 <div>
                 {
-                    user ? <Link to = '/profile' className='flex'><img className='w-[30px] h-[30px] rounded-full' src={imgAvailable?user.photoURL:'/vite.svg'} onError={handleError} alt='' /></Link>:
+                    user ? <Link to = '/profile' className='flex'><img className=' border-4 border-green-400 w-[30px] h-[30px] rounded-full' src={imgAvailable?user.photoURL:'/All assets/user-regular.svg'} onError={handleError} alt='' /></Link>:
                     <NavLink to = '/login'  className={({isActive})=>isActive?`px-4 py-2 rounded-3xl bg-green-100 text-green-700 `:`${style} `}>login</NavLink>
                 }
                 </div>

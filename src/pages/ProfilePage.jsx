@@ -35,7 +35,7 @@ function ProfilePage() {
                     user ? 
                     <div className='text-center my-8'>
                             <p className='flex justify-center m-4'>
-                                {user?.photoURL?<img className='border-4 rounded-full' src= {imgAvailable?user.photoURL:'/vite.svg'} onError={handleError} alt="" />:"No picture available"}
+                                {user?.photoURL?<img className='p-1 border-green-400 border-4 rounded-full w-[40px] h-[40px]' src= {imgAvailable?user.photoURL:'/All assets/user-regular.svg'} onError={handleError} alt="" />:"No picture available"}
                             </p>
                             <p>{user.email}</p>
                             <p>{user?.displayName?user.displayName:'User name is not registered'}</p>

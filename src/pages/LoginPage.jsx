@@ -6,6 +6,8 @@ import app from '../firebase/firebase.config';
 import { Helmet } from 'react-helmet-async';
 import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
+import { FaGoogle } from "react-icons/fa";
+import { FaG } from 'react-icons/fa6';
 
 
 function LoginPage() {
@@ -69,8 +71,9 @@ function LoginPage() {
                 <button type="submit" className="text-white bg-green-400 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login</button>
             
             </form>
-            <div className='text-center my-16 '>
-                <button className='rounded-xl bg-blue-700 hover:bg-blue-500 px-4 py-2 font-semibold text-white' onClick={handleGoogleSignIn}>Login with google</button>
+            <div className='flex justify-center text-center my-16 '>
+                
+                <button className='flex items-center gap-2 rounded-xl bg-orange-500 hover:bg-orange-400 px-4 py-2 font-semibold text-white' onClick={handleGoogleSignIn}><FaGoogle className='text-blue-600'></FaGoogle>Login with google</button>
             </div>
 
             <ToastContainer></ToastContainer>

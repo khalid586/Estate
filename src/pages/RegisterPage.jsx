@@ -6,6 +6,7 @@ import { updateProfile } from 'firebase/auth';
 import { Helmet } from 'react-helmet-async';
 import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
+import { IoEyeOutline } from "react-icons/io5";
 
 
 function RegisterPage() {
@@ -19,6 +20,8 @@ function RegisterPage() {
         const email = e.target.email.value;
         const password = e.target.password.value;
         const photoUrl = e.target.photoUrl.value;
+
+        let ok = true;
 
         createUser(email,password)
             .then(result => {
@@ -53,9 +56,12 @@ function RegisterPage() {
                 </div>
                 <div className="mb-5">
                     <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your password</label>
-                    <input type="password" id="password" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="******" required />
+                    <div className='flex'>
+                        <input type="password" id="password" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="******" required />
+
+                    </div>
                 </div>
-                <div className="mb-5">
+                <div className="mb-5 ">
                     <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Photo Url</label>
                     <input type="text" id="photoUrl" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="https://picture.png"  required />
                 </div>
