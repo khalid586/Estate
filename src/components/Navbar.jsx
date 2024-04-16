@@ -41,11 +41,11 @@ function NavbarComp() {
                 }
             </div> 
             <div className='pt-4 mr-2'> 
-            {   loading ? <Spinner></Spinner>:
+            {   loading? <Spinner></Spinner>:
                 <div>
                 {
                     user ? <Link to = '/profile' className='flex'><img className='w-[30px] h-[30px] rounded-full' src={imgAvailable?user.photoURL:'/vite.svg'} onError={handleError} alt='' /></Link>:
-                    <NavLink to = '/login'  className={({isActive})=>isActive?`px-4 py-2 rounded-3xl bg-green-400 text-white `:`${style} `}>login</NavLink>
+                    <NavLink to = '/login'  className={({isActive})=>isActive?`px-4 py-2 rounded-3xl bg-green-100 text-green-700 `:`${style} `}>login</NavLink>
                 }
                 </div>
             }

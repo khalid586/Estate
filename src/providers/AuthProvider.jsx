@@ -43,6 +43,7 @@ function AuthProvider({ children }) {
         logOut,
         signIn,
         loading,
+        setLoading,
     };
 
     return (

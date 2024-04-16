@@ -4,11 +4,15 @@ import { AuthContext } from '../providers/AuthProvider';
 import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
 import app from '../firebase/firebase.config';
 import { Helmet } from 'react-helmet-async';
+import { ToastContainer, toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
+
 
 function LoginPage() {
-    const {signIn} = useContext(AuthContext);
+    const {signIn,setLoading} = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
+
 
     const handleLogin = e =>{
         e.preventDefault();
@@ -17,10 +21,12 @@ function LoginPage() {
 
         signIn(email,password)
             .then(()=>{
-                alert('login successful');
-                navigate(location?.state?location.state:'/')
+                toast.success('Login Successful')
+                setTimeout(()=>{
+                    navigate(location?.state?location.state:'/')
+                },2000)
             })
-            .catch(error => alert(error))
+            .catch(error =>{toast.error(error.message); setLoading(false)})
     }
 
     const auth = getAuth(app);
@@ -31,7 +37,7 @@ function LoginPage() {
             .then(()=>{
                 navigate(location?.state?location.state:'/')
             })
-            .catch(error => alert(error.message))
+            .catch(error => {toast.error(error.message); setLoading(false)})
     }
 
     return (
@@ -66,6 +72,8 @@ function LoginPage() {
             <div className='text-center my-16 '>
                 <button className='rounded-xl bg-blue-700 hover:bg-blue-500 px-4 py-2 font-semibold text-white' onClick={handleGoogleSignIn}>Login with google</button>
             </div>
+
+            <ToastContainer></ToastContainer>
         </>
     )
 }
