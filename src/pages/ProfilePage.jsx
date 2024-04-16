@@ -3,6 +3,7 @@ import { AuthContext } from '../providers/AuthProvider';
 import { Navigate, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Spinner from '../components/Spinner';
+import { ToastContainer, toast } from 'react-toastify';
 
 
 
@@ -12,6 +13,13 @@ function ProfilePage() {
 
     function handleError(){
         setImgAvailable(false);
+    }
+
+    function handleLogout(){
+        toast.success('Logged out successfully')
+        setTimeout(()=>{
+            logOut();
+        },2500)
     }
 
     return(
@@ -33,7 +41,7 @@ function ProfilePage() {
                                 <p className='font-bold text-green-400'>{user?.displayName?user.displayName:'User name is not registered'}</p>
                             </div>
                             <p>{user.email}</p>
-                            <button className='btn2 m-4' onClick={logOut}> Logout</button>
+                            <button className='btn2 m-4' onClick={handleLogout}> Logout</button>
                     </div> 
                     
                     :
@@ -42,6 +50,7 @@ function ProfilePage() {
                 }
             </div>
         }
+        <ToastContainer></ToastContainer>
         </div>
     )
 }
