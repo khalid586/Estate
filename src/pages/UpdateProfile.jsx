@@ -71,8 +71,8 @@ function UpdateProfile() {
           {
             user ? 
             <div className='m-4 md:text-center'>
-
-              <form className='border-2 border-black p-2 m-2'>
+              <p className='font-bold text-3xl'>Curretn Information</p>
+              <form className='border-2 border-black m-4 rounded-lg p-4'>
                 <p>Name: <span className='font-semibold'>{name}</span></p>
                 <p>Email: <span className='font-semibold'>{user.email}</span></p>
                 <p className='screen-max-w'>
@@ -84,7 +84,7 @@ function UpdateProfile() {
               <div className='text-center'>
                 {
                   !show ? 
-                  <button onClick={()=>setShow(!show)} className='px-4 py-2 rounded-3xl font-bold text-white bg-violet-400'>Update Information</button>
+                  <button onClick={()=>setShow(!show)} className='px-4 py-2 rounded-3xl font-bold text-white bg-green-400'>Update Information</button>
                   :
                   <div className=''>
                       <form onSubmit={updateName} className='my-4'>

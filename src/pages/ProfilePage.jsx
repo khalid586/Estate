@@ -24,12 +24,15 @@ function ProfilePage() {
             <div>
                 {
                     user ? 
-                    <div className='text-center my-8'>
-                            <p className='flex justify-center m-4'>
-                                {user?.photoURL?<img className='p-1 border-green-400 border-4 rounded-full w-[40px] h-[40px]' src= {imgAvailable?user.photoURL:'/All assets/user-regular.svg'} onError={handleError} alt="" />:"No picture available"}
-                            </p>
+                    <div className='border m-4 rounded-2xl border-black text-center my-8'>
+                            <p className='my-2 text-2xl font-bold'>Welcome!!!</p>
+                            <div className='items-center justify-center flex gap-2'>
+                                <p className='flex justify-center my-4'>
+                                    {user?.photoURL?<img className='p-1 border-green-400 border-4 rounded-full w-[40px] h-[40px]' src= {imgAvailable?user.photoURL:'/All assets/user-regular.svg'} onError={handleError} alt="" />:"No picture available"}
+                                </p>
+                                <p className='font-bold text-green-400'>{user?.displayName?user.displayName:'User name is not registered'}</p>
+                            </div>
                             <p>{user.email}</p>
-                            <p>{user?.displayName?user.displayName:'User name is not registered'}</p>
                             <button className='btn2 m-4' onClick={logOut}> Logout</button>
                     </div> 
                     
