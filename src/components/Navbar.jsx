@@ -2,6 +2,10 @@ import React, { useContext, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom';
 import { Button, Navbar } from 'flowbite-react';
 import { AuthContext } from '../providers/AuthProvider';
+import { IoHomeOutline } from "react-icons/io5";
+import { BsBuilding } from "react-icons/bs";
+import { FaRegUser } from "react-icons/fa";
+
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -35,9 +39,10 @@ function NavbarComp() {
                 <span className="pl-2 self-center whitespace-nowrap text-base md:text-xl font-semibold dark:text-white">Estate</span>
             </NavLink>
             <div className='flex gap-2 justify-center md:w-2/3 mt-2'>
-                <NavLink to="/" className={({isActive})=>isActive?'text-blue-600 duration-500 rounded-full px-4 py-2 bg-blue-50 ':'text-black p-2'}><p className='flex gap-1'><img src='/All assets/building-regular.svg' width={10}/>Home</p></NavLink>
+                <NavLink to="/" className={({isActive})=>isActive?'text-blue-600 duration-500 rounded-full px-4 py-2 bg-blue-50 ':'text-black p-2'}><p className='flex gap-1 items-center'><IoHomeOutline className='text-green-500'></IoHomeOutline> Home</p></NavLink>
+                <NavLink to="/properties" className={({isActive})=>isActive?'text-blue-600 duration-500 rounded-full px-4 py-2 bg-blue-50 ':'text-black p-2'}><p className='flex gap-1 items-center'><BsBuilding className='text-green-500'></BsBuilding> Properties</p></NavLink>
                 {
-                    user && <NavLink to="/update" className={({isActive})=>isActive?'text-blue-600 duration-500 rounded-full px-4 p-2 bg-blue-50':'text-black p-2'}>     <p className='flex gap-1'><img src='/All assets/user-regular.svg' width={10}/>Update</p></NavLink>
+                    user && <NavLink to="/update" className={({isActive})=>isActive?'text-blue-600 duration-500 rounded-full px-4 p-2 bg-blue-50':'text-black p-2'}>     <p className='items-center flex gap-1'><FaRegUser className='text-green-500'></FaRegUser> Update</p></NavLink>
                 }
             </div> 
             <div className='pt-4 mr-2'> 

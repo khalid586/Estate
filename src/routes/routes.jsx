@@ -9,6 +9,7 @@ import ErrorPage from "../pages/ErrorPage";
 import UpdateProfile from "../pages/UpdateProfile";
 import Properties from "../components/Properties";
 import HomePage from "../pages/HomePage";
+import PropertiesPage from "../pages/PropertiesPage";
   
  export const router = createBrowserRouter([
     {
@@ -32,6 +33,10 @@ import HomePage from "../pages/HomePage";
         {
             path:'/profile',
             element:<ProfilePage></ProfilePage>
+        },
+        {
+            path:'/properties',
+            element:<PropertiesPage></PropertiesPage>
         },
         {
             path:'/update',

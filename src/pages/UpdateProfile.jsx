@@ -71,7 +71,7 @@ function UpdateProfile() {
           {
             user ? 
             <div className='m-4 md:text-center'>
-              <p className='font-bold text-3xl'>Curretn Information</p>
+              <p className='font-bold text-3xl'>Current Information</p>
               <form className='border-2 border-black m-4 rounded-lg p-4'>
                 <p>Name: <span className='font-semibold'>{name}</span></p>
                 <p>Email: <span className='font-semibold'>{user.email}</span></p>
