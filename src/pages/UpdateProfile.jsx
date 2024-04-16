@@ -1,19 +1,45 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { AuthContext } from '../providers/AuthProvider'
 import Spinner from '../components/Spinner';
 import { Navigate } from 'react-router-dom';
 import { update } from 'firebase/database';
+import { getAuth, updateProfile } from 'firebase/auth';
+import { ToastContainer, toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
+
 
 function UpdateProfile() {
   const { user, loading } = useContext(AuthContext);  
   const [show,setShow] = useState(false)
+  const auth = getAuth();
+
+  
+  const [name,setName] = useState('');
+  const [photoUrl,setPhotoUrl] = useState('');
+
+  useEffect(()=>{
+    if(!loading && user){
+      setName(user.displayName);
+      setPhotoUrl(user.photoURL);
+    }
+  },[loading])
+
 
   function updateName(e){
     e.preventDefault();
     const updatedName = e.target.name.value;
     console.log(updatedName)
     e.target.name.value = '';
+
+      updateProfile(auth.currentUser,{
+        displayName:updatedName,
+      }).then(()=>{
+        toast.success('Name updated successfully')
+        setName(updatedName);
+      }).catch(error =>{
+        toast.error(error.message)
+      })
   }
 
   function updateUrl(e){
@@ -21,6 +47,15 @@ function UpdateProfile() {
     const updatedUrl = e.target.updateUrl.value;
     console.log(updatedUrl)
     e.target.updateUrl.value = '';
+
+    updateProfile(auth.currentUser,{
+      photoURL:updatedUrl,
+    }).then(()=>{
+      toast.success('Photo url updated successfully')
+      setPhotoUrl(updatedUrl);
+    }).catch(error =>{
+      toast.error(error.message)
+    })
   }
 
   return (
@@ -35,12 +70,13 @@ function UpdateProfile() {
         <div>
           {
             user ? 
-            <div className='m-4'>
-              <form>
-                <p>Name: <span className='font-semibold'>{user.displayName}</span></p>
+            <div className='m-4 md:text-center'>
+
+              <form className='border-2 border-black p-2 m-2'>
+                <p>Name: <span className='font-semibold'>{name}</span></p>
                 <p>Email: <span className='font-semibold'>{user.email}</span></p>
                 <p className='screen-max-w'>
-                  PhotoUrl: <span className='font-semibold overflow-hidden inline-block max-w-full'>{user.photoURL}</span>
+                  PhotoUrl: <span className='font-semibold overflow-hidden inline-block max-w-full'>{photoUrl}</span>
                 </p>
               </form>
 
@@ -50,7 +86,7 @@ function UpdateProfile() {
                   !show ? 
                   <button onClick={()=>setShow(!show)} className='px-4 py-2 rounded-3xl font-bold text-white bg-violet-400'>Update Information</button>
                   :
-                  <div>
+                  <div className=''>
                       <form onSubmit={updateName} className='my-4'>
                         <input className='rounded-full mr-2' type="text" name="name" id="name" placeholder='Update your name' />
                         <button type='submit' className='px-4 py-2 rounded-3xl bg-blue-500 text-white'>Update</button>
@@ -74,6 +110,7 @@ function UpdateProfile() {
         </div>
         
       }
+      <ToastContainer></ToastContainer>
     </div>
   )
 }
