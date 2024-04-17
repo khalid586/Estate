@@ -9,6 +9,8 @@ import ErrorPage from "../pages/ErrorPage";
 import UpdateProfile from "../pages/UpdateProfile";
 import HomePage from "../pages/HomePage";
 import Hotels from "../pages/Hotels";
+import PropertyPage from "../pages/PropertyPage";
+import ProtectedRoute from "./ProtectedRoute";
   
  export const router = createBrowserRouter([
     {
@@ -39,8 +41,9 @@ import Hotels from "../pages/Hotels";
             element:<Hotels></Hotels>
         },
         {
-            path:'/hotels',
-            element:<Hotels></Hotels>
+            path:'/property/:id',
+            loader:()=>fetch('/properties.json'),
+            element:<ProtectedRoute><PropertyPage></PropertyPage></ProtectedRoute>
         },
         {
             path:'/update',

@@ -19,7 +19,7 @@ export function Property({Property}){
         yearOfConstruction} = Property; 
     // console.log( tags);
     return(
-      <Link to = {`/book/${propertyId}`} class="border-b-8 border-l-4 hover:border-red-500 hover:bg-yellow-50 duration-500 ease-in-out hover:shadow-xl hover:scale-110 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+      <Link to = {`/property/${propertyId}`} class="border-b-8 border-l-4 hover:border-red-500 hover:bg-yellow-50 duration-500 ease-in-out hover:shadow-xl hover:scale-110 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
           <p className='w-full h-[200px] lg:h-[300px]  flex justify-center'>
             <img class="rounded-t-lg " src={image} alt="" />
           </p>
