@@ -7,3 +7,8 @@
 - Private Routes
 - Google and Github authentication
 - Multiple Authentication options
+
+# Packages
+- Swiper slider
+- React icons
+
