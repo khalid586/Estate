@@ -1,8 +1,14 @@
 import React from 'react'
+import { Helmet } from 'react-helmet-async'
 
 function Hotels() {
   return (
-    <div>Hotels</div>
+    <div>
+        <Helmet>
+            <title>Estate | Hotels</title>
+        </Helmet>
+        Hotels
+    </div>
   )
 }
 

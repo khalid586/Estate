@@ -38,22 +38,23 @@ function LoginPage() {
 
     const handleGoogleSignIn = (method) => {
 
+        function navigateToPage(){
+            toast.success('Login Successful')
+            setTimeout(()=>{
+                navigate(location?.state?location.state:'/')
+            },1500)
+        }
+
         if(method == 'google'){
             signInWithPopup(auth,provider)
                 .then(()=>{
-                    toast.success('Login Successful')
-                    setTimeout(()=>{
-                        navigate(location?.state?location.state:'/')
-                    },1500)
+                    navigateToPage();
                 })
                 .catch(error => {toast.error(error.message); setLoading(false)})
         }else{
             signInWithPopup(auth,githubProvier)
                 .then(()=>{
-                    toast.success('Login Successful')
-                    setTimeout(()=>{
-                        navigate(location?.state?location.state:'/')
-                    },1500)
+                    navigateToPage();
                 })
                 .catch(error => {toast.error(error.message); setLoading(false)})
         }

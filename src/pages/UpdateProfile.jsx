@@ -29,7 +29,6 @@ function UpdateProfile() {
   function updateName(e){
     e.preventDefault();
     const updatedName = e.target.name.value;
-    console.log(updatedName)
     e.target.name.value = '';
 
       updateProfile(auth.currentUser,{
