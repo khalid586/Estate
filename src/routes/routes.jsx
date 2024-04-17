@@ -9,7 +9,7 @@ import ErrorPage from "../pages/ErrorPage";
 import UpdateProfile from "../pages/UpdateProfile";
 import Properties from "../components/Properties";
 import HomePage from "../pages/HomePage";
-import PropertiesPage from "../pages/PropertiesPage";
+import Hotels from "../pages/Hotels";
   
  export const router = createBrowserRouter([
     {
@@ -35,8 +35,8 @@ import PropertiesPage from "../pages/PropertiesPage";
             element:<ProfilePage></ProfilePage>
         },
         {
-            path:'/properties',
-            element:<PropertiesPage></PropertiesPage>
+            path:'/hotels',
+            element:<Hotels></Hotels>
         },
         {
             path:'/update',
