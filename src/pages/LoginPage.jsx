@@ -1,13 +1,14 @@
 import React, { useContext, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../providers/AuthProvider';
-import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
 import app from '../firebase/firebase.config';
 import { Helmet } from 'react-helmet-async';
 import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import { FaGoogle } from "react-icons/fa";
 import { FaG } from 'react-icons/fa6';
+import { FaGithub } from "react-icons/fa";
 
 
 function LoginPage() {
@@ -33,14 +34,31 @@ function LoginPage() {
 
     const auth = getAuth(app);
     const provider = new GoogleAuthProvider();
+    const githubProvier = new GithubAuthProvider();
 
-    const handleGoogleSignIn = () => {
-        signInWithPopup(auth,provider)
-            .then(()=>{
-                navigate(location?.state?location.state:'/')
-            })
-            .catch(error => {toast.error(error.message); setLoading(false)})
+    const handleGoogleSignIn = (method) => {
+
+        if(method == 'google'){
+            signInWithPopup(auth,provider)
+                .then(()=>{
+                    toast.success('Login Successful')
+                    setTimeout(()=>{
+                        navigate(location?.state?location.state:'/')
+                    },1500)
+                })
+                .catch(error => {toast.error(error.message); setLoading(false)})
+        }else{
+            signInWithPopup(auth,githubProvier)
+                .then(()=>{
+                    toast.success('Login Successful')
+                    setTimeout(()=>{
+                        navigate(location?.state?location.state:'/')
+                    },1500)
+                })
+                .catch(error => {toast.error(error.message); setLoading(false)})
+        }
     }
+
 
     return (
         <>
@@ -71,9 +89,10 @@ function LoginPage() {
                 <button type="submit" className="text-white bg-green-400 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login</button>
             
             </form>
-            <div className='flex justify-center text-center my-16 '>
+            <div className='flex-col flex items-center gap-2 text-center my-16 '>
                 
-                <button className='flex items-center gap-2 rounded-xl bg-orange-500 hover:bg-orange-400 px-4 py-2 font-semibold text-white' onClick={handleGoogleSignIn}><FaGoogle className='text-blue-600'></FaGoogle>Login with google</button>
+                <button className='flex items-center gap-2 rounded-xl bg-orange-500 hover:bg-orange-400 px-4 py-2 font-semibold text-white' onClick={()=>handleGoogleSignIn('google')}><FaGoogle className='text-blue-600'></FaGoogle>Login with Google</button>
+                <button className='flex items-center gap-2 rounded-xl bg-gray-800 hover:bg-gray-700 px-4 py-2 font-semibold text-white' onClick={()=>handleGoogleSignIn('github')}><FaGithub></FaGithub>Login with Github</button>
             </div>
 
             <ToastContainer></ToastContainer>

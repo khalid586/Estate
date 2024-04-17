@@ -19,7 +19,7 @@ function ProfilePage() {
         toast.success('Logged out successfully')
         setTimeout(()=>{
             logOut();
-        },2500)
+        },1700)
     }
 
     return(
