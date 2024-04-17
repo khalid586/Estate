@@ -31,10 +31,10 @@ export function Property({Property}){
   
           <div class="p-8 pl-6 pt-4">
               <h5 class="mb-4 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{propertyName}</h5>
-              <p class="text-red-600 mb-4 font-bold flex gap-2"><img width = {20} src="/All assets/pen-to-square-regular.svg" alt="" /> {owner}</p>
+              <p class="text-red-600 mb-4 font-bold flex gap-2">{owner}</p>
              
               <div className='mt-6 font-bold flex justify-between'>
-                  <p className="mb-1 flex gap-2 items-center font-bold p-2 px-4 rounded-full bg-violet-200 text-violet-500"><img width = {20} src="/All assets/font-awesome-regular.svg" alt="" /> {category}</p>
+                  <p className="mb-1 flex gap-2 items-center font-bold p-2 px-4 rounded-full bg-violet-200 text-violet-500">{category}</p>
                   <p className=' flex gap-2 items-center'><img src="/All assets/star-regular.svg"  width={20}/><span className='text-blue-500'>{rating}</span></p>
               </div>
           </div>

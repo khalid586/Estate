@@ -38,6 +38,7 @@ import ProtectedRoute from "./ProtectedRoute";
         },
         {
             path:'/hotels',
+            loader:()=>fetch('/properties.json'),
             element:<Hotels></Hotels>
         },
         {
