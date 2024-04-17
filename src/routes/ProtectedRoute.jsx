@@ -4,7 +4,7 @@ import { Navigate, useLocation } from 'react-router-dom';
 
 function ProtectedRoute({children}) {
     const {user,loading} = useContext(AuthContext);
-    const location = useLocation();
+    const {pathname} = useLocation();
 
     if(loading)
         return(
@@ -16,7 +16,7 @@ function ProtectedRoute({children}) {
                 <span class="sr-only">Loading...</span>
             </div>
         )
-        
+
     if(user){
         return children;
     }
