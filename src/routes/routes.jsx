@@ -7,7 +7,6 @@ import RegisterPage from "../pages/RegisterPage";
 import ProfilePage from "../pages/ProfilePage";
 import ErrorPage from "../pages/ErrorPage";
 import UpdateProfile from "../pages/UpdateProfile";
-import Properties from "../components/Properties";
 import HomePage from "../pages/HomePage";
 import Hotels from "../pages/Hotels";
   
@@ -16,10 +15,11 @@ import Hotels from "../pages/Hotels";
       path: "/",
       element: <Home></Home>,
       errorElement:<ErrorPage></ErrorPage>,
-
+      
       children:[
         {
           path:'/',
+          loader:()=>fetch('/properties.json'),
           element:<HomePage></HomePage>
         }
         ,{
@@ -33,6 +33,10 @@ import Hotels from "../pages/Hotels";
         {
             path:'/profile',
             element:<ProfilePage></ProfilePage>
+        },
+        {
+            path:'/hotels',
+            element:<Hotels></Hotels>
         },
         {
             path:'/hotels',

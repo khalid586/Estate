@@ -124,7 +124,7 @@ function LoginPage() {
             </form>
             <div className='flex-col flex items-center gap-2 text-center my-16 '>
                 
-                <button className='flex items-center gap-2 rounded-xl bg-orange-500 hover:bg-orange-400 px-4 py-2 font-semibold text-white' onClick={()=>handleGoogleSignIn('google')}><FaGoogle className='text-blue-600'></FaGoogle>Login with Google</button>
+                <button className='flex items-center gap-2 rounded-xl bg-orange-500 hover:bg-orange-400 px-4 py-2 font-semibold text-white' onClick={()=>handleGoogleSignIn('google')}><FaGoogle className='text-black'></FaGoogle>Login with Google</button>
                 <button className='flex items-center gap-2 rounded-xl bg-gray-800 hover:bg-gray-700 px-4 py-2 font-semibold text-white' onClick={()=>handleGoogleSignIn('github')}><FaGithub></FaGithub>Login with Github</button>
             </div>
 

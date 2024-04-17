@@ -1,8 +1,8 @@
 [Live website](https://real-estate-auth-b141a.web.app/login)
 
 <!-- 
-    UpperCase lowercase
-    toggle password type
+    UpperCase lowercase          [Done]
+    toggle password type         [Done]
     github login                [Done]
     single property
     homepage properties

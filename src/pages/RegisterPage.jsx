@@ -18,6 +18,9 @@ function RegisterPage() {
     const [show,setShow] = useState(false);
 
 
+    function isValidPassword(str) {
+        return /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/.test(str);
+    }
     
     function handleRegistration(e){
         e.preventDefault();
@@ -29,9 +32,6 @@ function RegisterPage() {
         let ok = true;
         setMsg('')
         
-        function isValidPassword(str) {
-            return /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/.test(str);
-        }
         ok = isValidPassword(password)
 
         if(!ok){
