@@ -9,18 +9,35 @@ import "react-toastify/dist/ReactToastify.css";
 import { FaGoogle } from "react-icons/fa";
 import { FaG } from 'react-icons/fa6';
 import { FaGithub } from "react-icons/fa";
+import { FaEyeSlash } from "react-icons/fa";
+import { FaEye } from "react-icons/fa";
 
 
 function LoginPage() {
     const {signIn,setLoading} = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
+    const [msg,setMsg] = useState('');
+    const [show,setShow] = useState(false)
 
 
     const handleLogin = e =>{
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
+
+        let ok = true;
+        setMsg('')
+        
+        function isValidPassword(str) {
+            return /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/.test(str);
+        }
+        ok = isValidPassword(password)
+
+        if(!ok){
+            setMsg('Wrong password') 
+            return;
+        }
 
         signIn(email,password)
             .then(()=>{
@@ -77,7 +94,22 @@ function LoginPage() {
                 </div>
                 <div className="mb-5">
                     <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your password</label>
-                    <input type="password" id="password" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+                    <div className=''>
+                        <div className='flex gap-2'>
+                            <input type={show?"text":"password"} id="password" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="******" required />
+                            <button className='' type='button' onClick={()=>setShow(!show)}>
+                                {
+                                    show? <FaEyeSlash></FaEyeSlash>:<FaEye></FaEye>
+                                }
+                            </button>
+                        </div>
+                        {
+                            msg && 
+                            <p className='text-red-500 text-xs font-semibold'>
+                                {msg}
+                            </p>
+                        }
+                    </div>
                 </div>
                 {/* <div className="flex items-start mb-5">
                     <div className="flex items-center h-5">

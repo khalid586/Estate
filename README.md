@@ -3,7 +3,7 @@
 <!-- 
     UpperCase lowercase
     toggle password type
-    github login
+    github login                [Done]
     single property
     homepage properties
     all properties
