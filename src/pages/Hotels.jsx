@@ -4,7 +4,10 @@ import { useLoaderData } from 'react-router-dom'
 import SigleItem from '../components/SingleItem';
 
 function Hotels() {
-  const AllPropperties = useLoaderData();
+  const AllProperties = useLoaderData();
+
+  const hotelProperties = AllProperties.filter(property => property.category === "Hotel");
+
 
   return (
     <div>
@@ -13,7 +16,7 @@ function Hotels() {
         </Helmet>
         <div className=' flex flex-col items-center'>
         {
-          AllPropperties.map(item => <div className='md:w-1/2'> <SigleItem Property = {item}></SigleItem></div> )
+          hotelProperties.map(item => <div className='md:w-1/2'> <SigleItem Property = {item}></SigleItem></div> )
         }
         </div>
 

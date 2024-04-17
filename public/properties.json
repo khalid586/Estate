@@ -33,7 +33,7 @@
         "description": "A modern loft located in the heart of downtown Chicago, offering spacious living areas and skyline views. Perfect for urban dwellers looking for a stylish and convenient lifestyle.",
         "totalRooms": 2,
         "rating": 4.7,
-        "category": "Loft",
+        "category": "Hotel",
         "tags": ["Urban Living", "Cityscape"],
         "owner": "Metropolitan Properties",
         "yearOfConstruction": 2016
@@ -46,7 +46,7 @@
         "description": "A luxurious penthouse suite perched atop a high-rise building in downtown Miami, offering stunning views of the city skyline and the Atlantic Ocean. The epitome of upscale urban living.",
         "totalRooms": 4,
         "rating": 4.8,
-        "category": "Penthouse",
+        "category": "Hotel",
         "tags": ["Skyline View", "Luxury Living"],
         "owner": "Skyline Properties Inc.",
         "yearOfConstruction": 2017
