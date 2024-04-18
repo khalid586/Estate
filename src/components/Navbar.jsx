@@ -13,6 +13,7 @@ function NavbarComp() {
 
   const style = 'rounded-3xl px-4 py-2 border-2 border-green-400';
   const {user,loading} = useContext(AuthContext);
+  const [imgAvailable,setImgAvailable] = useState('true');
 
   function handleError(){
     setImgAvailable(false);
@@ -32,7 +33,7 @@ function NavbarComp() {
 
   return (
     <>    
-        <div className='flex justify-between  font-semibold text-xs md:text-base'>
+        <div className='flex justify-between  font-semibold text-xs md:text-base pb-2'>
             <NavLink className= "mt-3" to = "/">
 
                 <span className="pl-2 self-center whitespace-nowrap text-base md:text-xl font-semibold dark:text-white">Estate</span>
@@ -48,7 +49,7 @@ function NavbarComp() {
             {   loading? <Spinner></Spinner>:
                 <div>
                 {
-                    user ? <Link to = '/profile' className='flex'><img className=' border-4 border-green-400 w-[30px] h-[30px] rounded-full' src={user.photoURL || '/All assets/icons8-user-80.png'} title={user.displayName} onError={handleError} alt='' /></Link>:
+                    user ? <Link to = '/profile' className='flex'><img className=' border-4 border-green-400 w-[30px] h-[30px] rounded-full' src={(user.photoURL && imgAvailable) || '/All assets/icons8-user-80.png'} title={user.displayName} onError={handleError} alt='' /></Link>:
                     <NavLink to = '/login'  className={({isActive})=>isActive?`px-4 py-2 rounded-3xl bg-green-100 text-green-700 `:`${style} `}>login</NavLink>
                 }
                 </div>

@@ -20,13 +20,11 @@ function PropertyItem({property}){
         yearOfConstruction,price,area,status} = property; 
   
     return(
-      <div className='text-center flex flex-col items-center '>  
+      <div className='text-center flex flex-col items-center'>
           <div className=' w-4/5 my-4'> 
-          
             <img class="h-[100px] md:h-[300px] lg:h-[400px] w-full" src={image} alt="image description"/>
-
-            {/* <img className = "w-[50vw]" src = {image} alt=""/> */}
           </div>  
+          
           <div className="lg:w-1/2 justify-center flex flex-col items-center border-gray-200 rounded-lg md:flex-row  dark:border-gray-700">
               <div className='m-4'>
                 <h5 className="mb-8 text-2xl lg:text-4xl font-bold tracking-tight text-gray-900 dark:text-white">{propertyName}</h5>

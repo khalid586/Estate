@@ -41,7 +41,7 @@ export default () => {
     
 
 
-    <Carousel className='m-8' slideInterval={1000} showControls={true} indicators={true}>
+    <Carousel className='md:m-8' slideInterval={1000} showControls={true} indicators={true}>
       <img src="https://image12.photobiz.com/7737/21_20160817083408_4958639_medium.jpg" alt="slider-2" />
       <img src="https://completehospitalitymanagement.com/wp-content/uploads/2023/08/luxury-real-estate-photo-punta-cana-850x568.jpg" alt="slider-3" />
       <img src="https://t3.ftcdn.net/jpg/06/19/00/08/360_F_619000872_AxiwLsfQqRHMkNxAbN4l5wg1MsPgBsmo.jpg" alt="slider-4" />
