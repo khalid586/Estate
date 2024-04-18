@@ -11,6 +11,8 @@ import HomePage from "../pages/HomePage";
 import Hotels from "../pages/Hotels";
 import PropertyPage from "../pages/PropertyPage";
 import ProtectedRoute from "./ProtectedRoute";
+import CustomMap from "../components/CustomMap";
+import { Test } from "../components/Test";
   
  export const router = createBrowserRouter([
     {
@@ -35,6 +37,14 @@ import ProtectedRoute from "./ProtectedRoute";
         {
             path:'/profile',
             element:<ProfilePage></ProfilePage>
+        },
+        {
+            path:'/map',
+            element:<CustomMap></CustomMap>
+        },
+        {
+            path:'/contact',
+            element:<Test></Test>
         },
         {
             path:'/hotels',

@@ -10,5 +10,6 @@
 
 # Packages
 - Swiper slider
-- React icons
+- React leaftlet
+- React form 
 

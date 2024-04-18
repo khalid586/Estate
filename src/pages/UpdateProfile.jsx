@@ -2,11 +2,12 @@ import React, { useContext, useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { AuthContext } from '../providers/AuthProvider'
 import Spinner from '../components/Spinner';
-import { Navigate } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { update } from 'firebase/database';
 import { getAuth, updateProfile } from 'firebase/auth';
 import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
+import { useForm } from 'react-hook-form';
 
 
 function UpdateProfile() {
@@ -17,6 +18,10 @@ function UpdateProfile() {
   
   const [name,setName] = useState('');
   const [photoUrl,setPhotoUrl] = useState('');
+
+
+  const { register, handleSubmit } = useForm();
+  const onSubmit = (data) => console.log(data);
 
   useEffect(()=>{
     if(!loading && user){
@@ -109,7 +114,11 @@ function UpdateProfile() {
         </div>
         
       }
+      <div className='text-center'>
+        <Link to = '/contact' className='underline font-bold'>Contact Us</Link>
+      </div>
       <ToastContainer></ToastContainer>
+
     </div>
   )
 }

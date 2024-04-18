@@ -5,6 +5,7 @@ import { AuthContext } from '../providers/AuthProvider';
 import { CiShoppingTag } from 'react-icons/ci';
 import { AiTwotoneDollarCircle } from 'react-icons/ai';
 import { HiCurrencyDollar } from 'react-icons/hi';
+import CustomMap from '../components/CustomMap';
 
 function PropertyItem({property}){
     const {    propertyId,
@@ -57,7 +58,7 @@ function PropertyItem({property}){
                   
               </div>
           </div>
-          <button className='mt-4'><Link className='btn2 text-sm  my-4' to = "/">Return Home</Link></button>
+          <button className='mt-4'><Link className='btn2 text-sm  my-4' to = "/map">Open Map</Link></button>
       </div>
     )
   }
@@ -70,8 +71,9 @@ function PropertyPage() {
     const Property = AllProperties.find(item => item.propertyId == id)
   
     return (
-      <div className='mt-16  flex justify-center'>
+      <div className='flex flex-col items-center border justify-center'>
         <PropertyItem key={Property.propertyId} property = {Property}></PropertyItem>
+        {/* <CustomMap></CustomMap> */}
         <ToastContainer></ToastContainer>
         
       </div>
