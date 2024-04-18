@@ -2,6 +2,9 @@ import React, { useContext } from 'react'
 import { Link, useLoaderData, useParams } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import { AuthContext } from '../providers/AuthProvider';
+import { CiShoppingTag } from 'react-icons/ci';
+import { AiTwotoneDollarCircle } from 'react-icons/ai';
+import { HiCurrencyDollar } from 'react-icons/hi';
 
 function PropertyItem({property}){
     const {    propertyId,
@@ -14,7 +17,7 @@ function PropertyItem({property}){
         category,
         tags,
         owner,
-        yearOfConstruction} = property; 
+        yearOfConstruction,price,area,status} = property; 
   
     return(
       <div className='text-center flex flex-col items-center'>  
@@ -30,7 +33,11 @@ function PropertyItem({property}){
               </div>
               <div className="flex flex-col p-4 leading-normal">
                    <div className='flex flex-col items-start'>
-                      <p className="mb-1 flex gap-2 font-bold text-red-500 dark:text-gray-400">   {owner}</p>
+                      <div className='flex justify-between w-full'> 
+                        <p className="mb-1 flex gap-2 font-bold  dark:text-gray-400">   {owner}</p>
+                        <p className='flex items-center gap-2 px-4 py-2 rounded-3xl font-bold text-white bg-red-700'><HiCurrencyDollar className='text-green-400'></HiCurrencyDollar> {price}</p>
+                        <p className={`flex items-center gap-2 px-4 py-2 rounded-3xl font-bold text-white ${status ==='Sale' ? 'bg-blue-500':'bg-yellow-200'} `}><CiShoppingTag className='text-green-400'></CiShoppingTag>{status}</p>
+                      </div>
                       <p className="mb-1 flex gap-2 font-bold text-violet-500 dark:text-gray-400">{category}</p>
                       <p className="my-1 flex items-start justify-center gap-2 font-bold text-gray-500 dark:text-gray-400"><span className='text-left'>{description}</span></p>
                    </div>
@@ -41,6 +48,7 @@ function PropertyItem({property}){
                     }
                   </p>
                   <div className='flex flex-col justify-start items-start my-2 font-bold text-gray-500 gap-1'>    
+                      <p className='flex gap-2'>Total Area: <span className='text-black'>{area}</span>sq.ft</p>
                       <p className='flex gap-2'>Location: <span className='text-black'>{location}</span></p>
                       <p className='flex gap-2'>Year of Construction: <span className='text-black'>{yearOfConstruction}</span></p>
                       <p className='flex gap-2'>Rating: <span className='text-blue-600'>{rating}</span></p>
