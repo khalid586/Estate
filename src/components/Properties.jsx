@@ -55,7 +55,7 @@ export function Property({Property}){
             {tags.map((tagName, index) => (
             <p key={index} className="p-2 bg-green-100 text-green-500 font-bold rounded-xl text-xs">{tagName}</p>
             ))}
-<div className={`flex items-center gap-2 ml-16 top-0 right-0 px-8 py-2 rounded-full text-white font-semibold ${status === 'Sale' ? 'bg-red-600' : 'bg-yellow-300'}`}>
+<div className={`flex items-center gap-2  px-8 py-2 rounded-full text-white font-semibold ${status === 'Sale' ? 'bg-red-600' : 'bg-yellow-300'}`}>
             <IoPricetagsOutline></IoPricetagsOutline> {status}
             </div>
         </div>

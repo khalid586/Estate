@@ -20,10 +20,10 @@ function PropertyItem({property}){
         yearOfConstruction,price,area,status} = property; 
   
     return(
-      <div className='text-center flex flex-col items-center'>  
-          <div className=''> 
+      <div className='text-center flex flex-col items-center '>  
+          <div className=' w-4/5 my-4'> 
           
-            <img class="h-auto max-w-full" src={image} alt="image description"/>
+            <img class="h-[100px] md:h-[300px] lg:h-[400px] w-full" src={image} alt="image description"/>
 
             {/* <img className = "w-[50vw]" src = {image} alt=""/> */}
           </div>  
@@ -33,12 +33,14 @@ function PropertyItem({property}){
               </div>
               <div className="flex flex-col p-4 leading-normal">
                    <div className='flex flex-col items-start'>
-                      <div className='flex justify-between w-full'> 
-                        <p className="mb-1 flex gap-2 font-bold  dark:text-gray-400">   {owner}</p>
-                        <p className='flex items-center gap-2 px-4 py-2 rounded-3xl font-bold text-white bg-red-700'><HiCurrencyDollar className='text-green-400'></HiCurrencyDollar> {price}</p>
-                        <p className={`flex items-center gap-2 px-4 py-2 rounded-3xl font-bold text-white ${status ==='Sale' ? 'bg-blue-500':'bg-yellow-200'} `}><CiShoppingTag className='text-green-400'></CiShoppingTag>{status}</p>
+                      <div className='md:flex flex-row-reverse justify-between w-full'> 
+                        <div className='flex md:justify-center gap-2'>
+                            <p className='m-1 flex items-center gap-2 px-4 py-2 rounded-3xl font-bold text-white bg-red-700'><HiCurrencyDollar className='text-green-400'></HiCurrencyDollar> {price}</p>
+                            <p className={`m-1 flex items-center gap-2 px-4 py-2 rounded-3xl font-bold text-white ${status ==='Sale' ? 'bg-blue-500':'bg-green-400'} `}><CiShoppingTag className='text-green-200'></CiShoppingTag>{status}</p>
+                        </div>
+                        <p className="mb-1 text-xl flex gap-2 font-bold   dark:text-gray-400">   {owner}</p>
                       </div>
-                      <p className="mb-1 flex gap-2 font-bold text-violet-500 dark:text-gray-400">{category}</p>
+                      <p className="mb-1 flex gap-2 font-bold text-2xl text-violet-500 dark:text-gray-400">{category}</p>
                       <p className="my-1 flex items-start justify-center gap-2 font-bold text-gray-500 dark:text-gray-400"><span className='text-left'>{description}</span></p>
                    </div>
                    <p className='flex items-center gap-4'>
