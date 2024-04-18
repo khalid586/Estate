@@ -36,7 +36,7 @@ function ProfilePage() {
                             <p className='my-2 text-2xl font-bold'>Welcome!!!</p>
                             <div className='items-center justify-center flex gap-2'>
                                 <p className='flex justify-center my-4'>
-                                    {user?.photoURL?<img className='p-1 border-green-400 border-4 rounded-full w-[40px] h-[40px]' src= {imgAvailable?user.photoURL:'/All assets/user-regular.svg'} onError={handleError} alt="" />:"No picture available"}
+                                    {user?.photoURL?<img className='p-1 border-green-400 border-4 rounded-full w-[40px] h-[40px]' src= {imgAvailable?user.photoURL:'/All assets/icons8-user-80.png'} onError={handleError} alt="" />:"No picture available"}
                                 </p>
                                 <p className='font-bold text-green-400'>{user?.displayName?user.displayName:'User name is not registered'}</p>
                             </div>
