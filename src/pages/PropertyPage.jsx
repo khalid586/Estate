@@ -15,14 +15,20 @@ function PropertyItem({property}){
         tags,
         owner,
         yearOfConstruction} = property; 
-    console.log(image)
   
     return(
-      <div className='text-center flex flex-col items-center'>    
+      <div className='text-center flex flex-col items-center'>  
+          <div className='border-4'> 
+          
+            <img class="h-auto max-w-full" src={image} alt="image description"/>
+
+            {/* <img className = "w-[50vw]" src = {image} alt=""/> */}
+          </div>  
           <div className="lg:w-1/2 justify-center flex flex-col items-center border-gray-200 rounded-lg md:flex-row  dark:border-gray-700">
-              <img className="object-cover hover:scale-150 duration-700 ease-in-out  rounded-t-lg md:h-auto lg:w-72 xl:w-96 md:w-48 md:rounded-none md:rounded-s-lg mr-8" src = {image} alt=""/>
+              <div>
+                <h5 className="mb-8 text-2xl lg:text-4xl font-bold tracking-tight text-gray-900 dark:text-white">{propertyName}</h5>
+              </div>
               <div className="flex flex-col p-4 leading-normal">
-                  <h5 className="mb-8 text-2xl lg:text-4xl font-bold tracking-tight text-gray-900 dark:text-white">{propertyName}</h5>
                    <div className='flex flex-col items-start'>
                       <p className="mb-1 flex gap-2 font-bold text-red-500 dark:text-gray-400">   {owner}</p>
                       <p className="mb-1 flex gap-2 font-bold text-violet-500 dark:text-gray-400">{category}</p>
@@ -43,7 +49,7 @@ function PropertyItem({property}){
                   
               </div>
           </div>
-          <button className='mt-8'><Link className='btn2 text-sm  my-4' to = "/">Return Home</Link></button>
+          <button className='mt-4'><Link className='btn2 text-sm  my-4' to = "/">Return Home</Link></button>
       </div>
     )
   }
