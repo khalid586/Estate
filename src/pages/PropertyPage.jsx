@@ -18,14 +18,14 @@ function PropertyItem({property}){
   
     return(
       <div className='text-center flex flex-col items-center'>  
-          <div className='border-4'> 
+          <div className=''> 
           
             <img class="h-auto max-w-full" src={image} alt="image description"/>
 
             {/* <img className = "w-[50vw]" src = {image} alt=""/> */}
           </div>  
           <div className="lg:w-1/2 justify-center flex flex-col items-center border-gray-200 rounded-lg md:flex-row  dark:border-gray-700">
-              <div>
+              <div className='m-4'>
                 <h5 className="mb-8 text-2xl lg:text-4xl font-bold tracking-tight text-gray-900 dark:text-white">{propertyName}</h5>
               </div>
               <div className="flex flex-col p-4 leading-normal">

@@ -10,7 +10,10 @@
         "category": "Hotel",
         "tags": ["Luxury", "City View"],
         "owner": "Hospitality Group Inc.",
-        "yearOfConstruction": 2015
+        "yearOfConstruction": 2015,
+        "price": 15000000,
+        "area": 50000,
+        "status": "Sale"
     },
     {
         "propertyId": 2,
@@ -23,7 +26,10 @@
         "category": "Villa",
         "tags": ["Beachfront", "Ocean View"],
         "owner": "Luxury Estates LLC",
-        "yearOfConstruction": 2018
+        "yearOfConstruction": 2018,
+        "price": 8000000,
+        "area": 10000,
+        "status": "Sale"
     },
     {
         "propertyId": 3,
@@ -36,7 +42,10 @@
         "category": "Hotel",
         "tags": ["Urban Living", "Cityscape"],
         "owner": "Metropolitan Properties",
-        "yearOfConstruction": 2016
+        "yearOfConstruction": 2016,
+        "price": 3000000,
+        "area": 2000,
+        "status": "Rent"
     },
     {
         "propertyId": 4,
@@ -49,7 +58,10 @@
         "category": "Hotel",
         "tags": ["Skyline View", "Luxury Living"],
         "owner": "Skyline Properties Inc.",
-        "yearOfConstruction": 2017
+        "yearOfConstruction": 2017,
+        "price": 12000000,
+        "area": 4000,
+        "status": "Sale"
     },
     {
         "propertyId": 5,
@@ -62,7 +74,10 @@
         "category": "Office Space",
         "tags": ["Business District", "Tech Hub"],
         "owner": "Business Park Management",
-        "yearOfConstruction": 2019
+        "yearOfConstruction": 2019,
+        "price": 5000000,
+        "area": 15000,
+        "status": "Rent"
     },
     {
         "propertyId": 6,
@@ -75,7 +90,10 @@
         "category": "Mall",
         "tags": ["Luxury Shopping", "Entertainment"],
         "owner": "Dubai Holdings",
-        "yearOfConstruction": 2008
+        "yearOfConstruction": 2008,
+        "price": 20000000,
+        "area": 100000,
+        "status": "Sale"
     },
     {
         "propertyId": 7,
@@ -88,7 +106,10 @@
         "category": "Apartment",
         "tags": ["City Living", "Culture"],
         "owner": "City Living Investments",
-        "yearOfConstruction": 2014
+        "yearOfConstruction": 2014,
+        "price": 7000000,
+        "area": 3000,
+        "status": "Rent"
     },
     {
         "propertyId": 8,
@@ -101,7 +122,10 @@
         "category": "Farmhouse",
         "tags": ["Countryside", "Wine Country"],
         "owner": "Tuscan Retreats",
-        "yearOfConstruction": 2005
+        "yearOfConstruction": 2005,
+        "price": 10000000,
+        "area": 20000,
+        "status": "Sale"
     },
     {
         "propertyId": 9,
@@ -114,10 +138,9 @@
         "category": "Office Tower",
         "tags": ["Corporate", "Cityscape"],
         "owner": "Tokyo Realty Corporation",
-        "yearOfConstruction": 2012
+        "yearOfConstruction": 2012,
+        "price": 25000000,
+        "area": 50000,
+        "status": "Sale"
     }
-
-
 ]
-
-

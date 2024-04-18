@@ -83,7 +83,7 @@ function UpdateProfile() {
               <div className='text-center'>
                 {
                   !show ? 
-                  <button onClick={()=>setShow(!show)} className='px-4 py-2 rounded-3xl font-bold text-white bg-green-400'>Update Information</button>
+                  <button onClick={()=>setShow(!show)} className='px-4 py-2 rounded-3xl font-bold text-green-400 underline'>Update Information</button>
                   :
                   <div className=''>
                       <form onSubmit={updateName} className='my-4'>
