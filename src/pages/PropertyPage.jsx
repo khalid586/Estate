@@ -25,7 +25,7 @@ function PropertyItem({property}){
             <img class="h-[100px] md:h-[300px] lg:h-[400px] w-full" src={image} alt="image description"/>
           </div>  
           
-          <div className="lg:w-1/2 justify-center flex flex-col items-center border-gray-200 rounded-lg md:flex-row  dark:border-gray-700">
+          <div className="lg:w-4/5 flex flex-col items-center justify-between border-gray-200 rounded-lg md:flex-row  dark:border-gray-700">
               <div className='m-4'>
                 <h5 className="mb-8 text-2xl lg:text-4xl font-bold tracking-tight text-gray-900 dark:text-white">{propertyName}</h5>
               </div>
@@ -39,7 +39,7 @@ function PropertyItem({property}){
                         <p className="mb-1 text-xl flex gap-2 font-bold   dark:text-gray-400">   {owner}</p>
                       </div>
                       <p className="mb-1 flex gap-2 font-bold text-2xl text-violet-500 dark:text-gray-400">{category}</p>
-                      <p className="my-1 flex items-start justify-center gap-2 font-bold text-gray-500 dark:text-gray-400"><span className='text-left'>{description}</span></p>
+                      <p className="md:w-1/2 my-1 flex items-start justify-center gap-2 font-bold text-gray-500 dark:text-gray-400"><span className='text-left'>{description}</span></p>
                    </div>
                    <p className='flex items-center gap-4'>
                     <p className='font-bold text-lg flex gap-4'><img src="/All assets/tags-solid.svg" width={20} alt="" /></p>
