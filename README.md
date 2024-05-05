@@ -1,5 +1,5 @@
 # Live website
-[Live website](https://real-estate-auth-b141a.web.app/login)
+[Live website](https://real-estate-auth-b141a.web.app)
 
 # Features
 - User Authentication

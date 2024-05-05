@@ -72,8 +72,9 @@ function PropertyPage() {
   
     return (
       <div className='flex flex-col items-center border justify-center'>
+        
         <PropertyItem key={Property.propertyId} property = {Property}></PropertyItem>
-        {/* <CustomMap></CustomMap> */}
+
         <ToastContainer></ToastContainer>
         
       </div>
