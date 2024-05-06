@@ -44,7 +44,7 @@ export function Property({Property}){
     //       </div> border-b-8 border-l-4 hover:border-red-500 duration-500 ease-in-out
     //   </Link> 
 
-    <Link to={`/property/${propertyId}`} className="relative block  hover:shadow-xl hover:scale-110 duration-500 ease-in-out bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <Link to={`/property/${propertyId}`} className="relative block  hover:shadow-xl hover:scale-110 duration-500 ease-in-out bg-white border-gray-200  shadow dark:bg-gray-800 dark:border-gray-700 text-xs ">
 
         <div className="relative w-full h-[200px] lg:h-[450px] overflow-hidden rounded-t-lg">
             <img className="absolute inset-0 w-full h-full object-cover object-center" src={image} alt="" />
@@ -55,7 +55,7 @@ export function Property({Property}){
             {tags.map((tagName, index) => (
             <p key={index} className="p-2 bg-green-100 text-green-500 font-bold rounded-xl text-xs">{tagName}</p>
             ))}
-<div className={`flex items-center gap-2  px-8 py-2 rounded-full text-white font-semibold ${status === 'Sale' ? 'bg-red-600' : 'bg-yellow-300'}`}>
+        <div className={`flex items-center gap-1  px-4 py-2 rounded-full text-white font-semibold ${status === 'Sale' ? 'bg-red-600' : 'bg-yellow-300'}`}>
             <IoPricetagsOutline></IoPricetagsOutline> {status}
             </div>
         </div>
@@ -67,7 +67,7 @@ export function Property({Property}){
             <div className="flex justify-between">
             <p className="mb-1 flex gap-2 items-center font-bold p-2 px-4 rounded-full bg-violet-200 text-violet-500">{category}</p>
             <div className="flex gap-2 items-center">
-                <span className="text-white px-4 py-2 rounded-3xl bg-red-400 font-extrabold flex gap-1 items-center"><FaRegStar className='text-yellow-200'></FaRegStar>{rating}</span>
+                <span className="text-white px-4 py-2 rounded-3xl bg-red-400 font-extrabold flex gap-1 items-center"><FaRegStar className=''></FaRegStar>{rating}</span>
             </div>
             </div>
         </div>
